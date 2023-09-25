@@ -104,8 +104,8 @@ const Steps = (props: ISteps) => {
                 }`}
                 key={idx + data}
               >
-                <span className="text-5xl">{num}</span>
-                <p className="text-xl">{data}</p>
+                <span className="text-xl sm:text-5xl">{num}</span>
+                <p className="text-sm sm:text-xl">{data}</p>
               </div>
             );
           })}

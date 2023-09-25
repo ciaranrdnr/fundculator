@@ -6,8 +6,8 @@ import Button from "../../button";
 
 const Footer = () => {
   return (
-    <footer className="px-[10%] pt-[10%] bg-gradient-to-br from-[#4195D5] from-0% via-[#27638a] via-50% to-[#133F5D] to-100%">
-      <div className="flex space-x-[88px] items-center">
+    <footer className="px-4 sm:px-[10%] pt-[10%] bg-gradient-to-br from-[#4195D5] from-0% via-[#27638a] via-50% to-[#133F5D] to-100%">
+      <div className="flex sm:flex-row flex-col sm:space-x-[88px] items-center">
         <Image
           src={"/img-solution.png"}
           alt=""
@@ -16,24 +16,24 @@ const Footer = () => {
           height={0}
           style={{ width: "20vw", height: "auto" }}
         />
-        <div className="w-1/2 space-y-8">
-          <p className="text-white font-bold text-4xl leading-[59px]">
+        <div className="sm:w-1/2 space-y-8">
+          <p className="text-white font-bold text-lg sm:text-4xl sm:leading-[59px] sm:text-left text-center">
             Solusi Pembayaran untuk Kelancaran Cashflow Bisnis via Paper id
           </p>
           <Button
             variant="contained"
             label={<p>Daftar Gratis Sekarang</p>}
-            className="py-4 px-12"
+            className="py-4 px-12 w-full sm:w-fit"
           />
         </div>
       </div>
 
-      <nav className="flex border-t border-b mt-[10%] py-[21px] justify-between">
-        <div className="flex flex-col space-y-[15px] w-1/2">
+      <nav className="flex sm:flex-row flex-col border-t border-b mt-[10%] py-[21px] justify-between space-y-12 sm:space-y-0">
+        <div className="flex flex-col space-y-[15px] sm:w-1/2">
           <Image src={"/paper-logo.svg"} width={157} height={56} alt="paper" />
-          <div className="flex space-x-8 text-white text-sm">
-            <div className="flex space-x-7">
-              <div className="flex-col space-y-2.5 w-1/2">
+          <div className="flex sm:flex-row flex-col sm:space-x-8 text-white text-sm">
+            <div className="flex sm:flex-row flex-col space-y-6 sm:space-y-0 sm:space-x-7">
+              <div className="flex-col space-y-2.5 sm:w-1/2">
                 <p className="font-bold">Hubungi Kami</p>
                 <div className="flex space-x-2">
                   <PhoneIcon size={24} />
@@ -58,7 +58,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex-col space-y-2.5">
+              <div className="flex flex-col space-y-2.5">
                 <p className="font-bold">Jam Operasional</p>
                 <div className="flex space-x-2">
                   <div className="flex flex-col space-y-2">
@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex text-sm text-white space-x-8">
+        <div className="flex text-sm sm:flex-row flex-col space-y-6 sm:space-y-0  text-white space-x-8">
           <div>
             <p className="font-bold">Fitur Lainnya</p>
             <div className="flex space-x-8 pt-[10px]">
@@ -98,12 +98,12 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <ul className="flex flex-col space-y-[10px]">
+          <ul className="hidden sm:flex flex-col space-y-[10px]">
             <li className="font-bold">Jual Beli</li>
             <li>Jasa</li>
             <li>F&B</li>
           </ul>
-          <ul className="flex flex-col space-y-[10px]">
+          <ul className="hidden sm:flex flex-col space-y-[10px]">
             <li className="font-bold">Perusahaan</li>
             <li>Tentang Kami</li>
             <li>Cara Kerja</li>
@@ -116,12 +116,13 @@ const Footer = () => {
         </div>
       </nav>
       <div></div>
-      <div className="flex justify-between pt-7 pb-32">
+      <div className="flex text-center sm:text-left flex-col space-y-10 sm:space-y-0 sm:flex-row items-center
+       sm:justify-between pt-7 pb-32">
         <p className="text-white/60 text-sm">
           Copyright © 2023 Paper.id (PT Pakar Digital Global)
         </p>
         <Image src={"/sosmed.png"} width={145} height={25} alt="" />
-        <div className="text-sm text-white flex space-x-4">
+        <div className="text-sm text-white flex justify-center sm:justify-start space-x-4">
           <p>Privacy Policy</p>
           <p>Terms & Condition</p>
           <p>Sitemap</p>

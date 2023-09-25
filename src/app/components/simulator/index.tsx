@@ -78,7 +78,7 @@ const Simulator = (props: ISimulator) => {
           } focus-within:text-blue space-x-2 text-2xl`}
         />
       </div>
-      <div className="mx-auto w-1/2">
+      <div className="mx-auto sm:w-1/2">
         <Button
           onClick={() => {
             setSimStep(simStep + 1);
@@ -257,7 +257,7 @@ const Simulator = (props: ISimulator) => {
           } focus-within:text-black space-x-2 text-sm border-b pb-1`}
         />
       </div>
-      <div className="flex space-x-4">
+      <div className="flex sm:flex-row flex-col space-y-4 sm:space-x-4">
         <div className="flex flex-col space-y-2 w-full">
           <p className="text-xs">Tanggal Lahir</p>
           <Input
@@ -301,7 +301,7 @@ const Simulator = (props: ISimulator) => {
           />
         </div>
       </div>
-      <div className="flex space-x-4">
+      <div className="flex sm:flex-row flex-col space-y-4 sm:space-x-4">
         <div className="flex flex-col space-y-2 w-full">
           <p className="text-xs">No. KTP</p>
           <Input
@@ -376,7 +376,7 @@ const Simulator = (props: ISimulator) => {
       </div>
 
       <p className="text-base text-left font-bold">Unggah Dokumen Pribadi</p>
-      <div className="flex space-x-6">
+      <div className="fflex sm:flex-row flex-col space-y-6 sm:space-x-6">
         <div className="flex-col space-y-3 p-3 rounded-[10px] border w-full">
           <div className="flex space-x-3">
             <div className="bg-blue/20 w-[72px] h-[48px] rounded-[5px]"></div>
@@ -492,9 +492,8 @@ const Simulator = (props: ISimulator) => {
     </div>
   );
   return (
-    <div className="transition-all w-3/6 flex flex-col space-y-6 pt-[10%] pr-[10%] z-10 transition-all">
+    <div className="w-full sm:w-3/6 flex flex-col space-y-6 pt-[10%] sm:pr-[10%] sm:pl-0 px-4 z-10 transition-all">
       <div className="border-b-2 border-r p-4 bg-white/30 backdrop-blur-md rounded-[10px]">
-        {/* {simStep} */}
         {simStep == 0 ? onboarding : null}
         {simStep == 1 ? form : null}
         {simStep == 2 ? loanOffer : null}

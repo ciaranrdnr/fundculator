@@ -21,17 +21,17 @@ const HowToSection = () => {
   const [selected, setSelected] = useState(0);
   return (
     <section className="how-to pt-[54px] pb-[60px]">
-      <h2 className="text-navy text-5xl text-center font-bold">
+      <h2 className="text-navy text-3xl sm:text-5xl text-center font-bold">
         Proses Pendaftaran SmartCart Pay Later
       </h2>
-      <div className="flex space-x-24 h-full items-center">
+      <div className="flex flex-col sm:flex-row sm:space-x-24 h-full items-center">
         <Steps
           contents={contents.desc}
           selected={selected}
           onChange={(e) => {
             setSelected(e);
           }}
-          className="w-1/2 pl-[10%] pt-[10%]"
+          className="w-full px-4 sm:w-1/2 sm:pl-[10%] pt-[10%]"
         />
         <Slideshow urls={contents.imgSrc} active={selected} />
       </div>

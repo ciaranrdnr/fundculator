@@ -27,11 +27,11 @@ const Topbar = (props: ITopbar) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  const defaultClass = 'topbar fixed top-0 w-full px-[10%] mx-auto  uppercase z-20 flex justify-between items-center '
+  const defaultClass = 'topbar fixed top-0 w-full px-3 sm:px-[10%] mx-auto  uppercase z-20 flex justify-between items-center '
   return (
-    <nav className={`${defaultClass} transition-all ${scroll?'bg-white pt-4 pb-4':'bg-transparent pt-8 pb-8'} ${props.className ?? ''} `}>
+    <nav className={`${defaultClass} transition-all ${scroll?'bg-white pt-4 pb-4':'bg-transparent pt-2 pb-2'} ${props.className ?? ''} `}>
       <Link href={''}><Image alt="Paper" width={114} height={40} src={scroll?'/paper-logo-black.svg':'/paper-logo.svg'} /></Link> 
-      <div className="flex text-lg items-center w-3/4 justify-between">
+      <div className="sm:flex text-lg items-center w-3/4 justify-between hidden">
         <ul className="flex space-x-8">
           {props.children?.map((child, idx:number)=>{
             return( <li key={'topbar'+idx} className={`${scroll?' text-black hover:text-black/80':' text-gray-200 hover:text-white'}`}> {child} </li>)

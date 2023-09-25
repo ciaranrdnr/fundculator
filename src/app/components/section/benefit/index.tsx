@@ -17,13 +17,13 @@ const BenefitSection = () => {
     },
   ];
   return (
-    <section className="hero relative pt-24 pb-40">
-      <h2 className="text-navy text-5xl text-center font-bold">
+    <section className="benefit relative pt-24 pb-40">
+      <h2 className="text-navy text-3xl sm:text-5xl text-center font-bold">
         Manfaat yang Bisa Anda Rasakan
       </h2>
-      <div className="flex space-x-[140px]">
+      <div className="flex flex-col sm:flex-row sm:space-x-[140px]">
         <List content={contents} />
-        <div className="w-2/5 pr-[10%] flex items-center">
+        <div className="sm:flex hidden w-full sm:w-2/5 sm:pr-[10%]  items-center">
           <Image
             src={"/benefit.png"}
             alt=""

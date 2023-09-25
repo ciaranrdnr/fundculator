@@ -8,7 +8,7 @@ interface IList {
 }
 const List = (props: IList) => {
   return (
-    <div className="w-3/5 flex flex-col space-y-12 pl-[10%] pt-[10%]">
+    <div className="w-full sm:w-3/5 flex flex-col space-y-12 px-4 sm:pl-[10%] pt-[10%]">
       {props.content.map((content, idx: number) => {
         const lastIdx = props.content.length == idx + 1;
         return (
@@ -19,9 +19,9 @@ const List = (props: IList) => {
                 <div className="bg-gray-300 w-0.5 h-[120%] -translate-y-4 flex-none" />
               )}
             </div>
-            <div className="flex flex-col space-y-[14px] text-black">
-              <p className="text-[26px] font-bold">{content.title}</p>
-              <p className="text-xl">{content.desc}</p>
+            <div className="flex flex-col space-y-2 sm:space-y-[14px] text-black">
+              <p className="text-base sm:text-[26px] font-bold">{content.title}</p>
+              <p className="text-sm sm:text-xl">{content.desc}</p>
             </div>
           </div>
         );
