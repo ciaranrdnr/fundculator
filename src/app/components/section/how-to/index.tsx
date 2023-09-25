@@ -12,10 +12,10 @@ const HowToSection = () => {
       "Selesai! Anda dapat langsung melakukan transaksi dengan Paper Usaha.",
     ],
     imgSrc: [
-      "/../../../img-how-to-1.png",
-      "/../../../img-how-to-2.png",
-      "/../../../img-how-to-3.png",
-      "/../../../img-how-to-4.png",
+      "/img-how-to-1.png",
+      "/img-how-to-2.png",
+      "/img-how-to-3.png",
+      "/img-how-to-4.png",
     ],
   };
   const [selected, setSelected] = useState(0);

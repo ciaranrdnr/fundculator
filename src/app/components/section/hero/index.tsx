@@ -17,7 +17,7 @@ const HeroSection = () => {
       <Image
         className="z-0"
         draggable={false}
-        src={"/../../../Aurora.png"}
+        src={"/Aurora.png"}
         alt=""
         fill
       />
