@@ -29,7 +29,7 @@ const Topbar = (props: ITopbar) => {
   }, []);
   const defaultClass = 'topbar fixed top-0 w-full px-3 sm:px-[10%] mx-auto  uppercase z-20 flex justify-between items-center '
   return (
-    <nav className={`${defaultClass} transition-all ${scroll?'bg-white pt-4 pb-4':'bg-transparent pt-2 pb-2'} ${props.className ?? ''} `}>
+    <nav className={`${defaultClass} transition-all ${scroll?'bg-white pt-4 pb-4':'bg-transparent pt-[30px] pb-2'} ${props.className ?? ''} `}>
       <Link href={''}><Image alt="Paper" width={114} height={40} src={scroll?'/paper-logo-black.svg':'/paper-logo.svg'} /></Link> 
       <div className="sm:flex text-lg items-center w-3/4 justify-between hidden">
         <ul className="flex space-x-8">

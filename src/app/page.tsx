@@ -4,6 +4,7 @@ import BenefitSection from './sections/benefit'
 import HeroSection from './sections/hero'
 import HowToSection from './sections/how-to'
 import Footer from './sections/footer'
+import CheckoutSection from './sections/checkout'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       </Topbar>
       <HeroSection/>
       <HowToSection/>
+      <CheckoutSection/>
       <BenefitSection/>
       <Footer/>
     </main>

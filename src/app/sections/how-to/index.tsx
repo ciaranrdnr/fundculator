@@ -28,7 +28,7 @@ const HowToSection = () => {
         <Steps
           contents={contents.desc}
           selected={selected}
-          onChange={(e) => {
+          onChange={(e:any) => {
             setSelected(e);
           }}
           className="w-full px-4 sm:w-1/2 sm:pl-[10%] pt-[10%]"

@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
-import Button from "../button";
-import ArrowIcon from "@/app/assets/icons/arrow";
-import Image from "next/image";
 import LoanOffer from "./loan-offer";
 import LastStep from "./last-step";
 import FormSimulator from "./form-simulator";
 import Onboarding from "./onboarding";
+import InteractiveArrow from "../interactive-arrow";
+import ConfirmationDialog from "../confirmation-dialog";
 
 interface ISimulator {
   id?: string;
@@ -28,6 +27,7 @@ export interface IData {
   legalDoc?: string;
   offer?: 0 | 1;
 }
+
 const Simulator = (props: ISimulator) => {
   const [totalLoan, setTotalLoan] = useState(0);
   const [simStep, setSimStep] = useState(0);
@@ -50,38 +50,6 @@ const Simulator = (props: ISimulator) => {
   const [fee, setFee] = useState(0);
   const [showDataConfirmation, setShowDataConfirmation] = useState(false);
 
-
-  const ConfirmationDialog = ({ title, desc, imgUrl, onClick, label, footer }: any) => {
-    return (
-      <div className="transition-all fixed text-white top-0 left-0 w-full h-full p-4 py-4 z-20">
-        <div className=" flex  items-center justify-center bg-black/80 rounded-[10px] w-full h-full ">
-          <div className="w-2/3 flex flex-col space-y-6 items-center rounded-[10px] bg-gradient-to-br py-6 px-4 from-[#377cb1] from-0% to-[#133F5D] to-100%">
-            <div className="flex flex-col space-y-3">
-              <p className="text-[15px] text-center">{title}</p>
-              <p className="text-[13px] text-center opacity-60">{desc}</p>
-            </div>
-            <Image
-              src={imgUrl}
-              alt=""
-              width={194}
-              height={0}
-              style={{ height: "auto" }}
-              objectFit="contain"
-            />
-            <Button
-              onClick={onClick}
-              isFullWidth
-              variant="contained"
-              label={label}
-              className="py-[10px] text-sm"
-            />
-            {footer}
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
   const contentLastStep = [
     {
       title: "Selamat, Limit Anda Sudah Aktif",
@@ -155,12 +123,7 @@ const Simulator = (props: ISimulator) => {
               ):null} 
         /> : null}
       </div>
-      <div className="flex opacity-70 justify-center space-x-2 animate-[bounce_1.5s_ease-in-out_infinite]">
-        <ArrowIcon size={24} color="#ffffff" />
-        <p className="text-white text-base">
-          Anda dapat berinteraksi pada tampilan ini
-        </p>
-      </div>
+      <InteractiveArrow/>
     </div>
   );
 };

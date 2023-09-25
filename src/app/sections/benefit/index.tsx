@@ -1,5 +1,5 @@
-import List from "@/app/components/list";
 import Image from "next/image";
+import List from "../../components/list";
 
 const BenefitSection = () => {
   const contents = [
