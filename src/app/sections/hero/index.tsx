@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Simulator from "../../simulator";
+import Simulator from "../../components/simulator";
 
 const HeroSection = () => {
   return (

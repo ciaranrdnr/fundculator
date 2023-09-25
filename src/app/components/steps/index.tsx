@@ -1,5 +1,6 @@
+"use client";
 import CheckedIcon from "@/app/assets/icons/checked";
-import { FormEventHandler, MouseEventHandler, useEffect } from "react";
+import { MouseEventHandler, useEffect } from "react";
 
 interface ISteps {
   contents: string[];

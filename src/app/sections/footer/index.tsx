@@ -2,7 +2,7 @@ import Image from "next/image";
 import PhoneIcon from "@/app/assets/icons/phone";
 import EmailIcon from "@/app/assets/icons/email";
 import HomeIcon from "@/app/assets/icons/home";
-import Button from "../../button";
+import Button from "../../components/button";
 
 const Footer = () => {
   return (

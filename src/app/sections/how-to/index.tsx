@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import Steps from "../../steps";
-import Slideshow from "../../slideshow";
+import Steps from "../../components/steps";
+import Slideshow from "../../components/slideshow";
 
 const HowToSection = () => {
   const contents = {
