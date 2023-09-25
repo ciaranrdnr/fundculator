@@ -12,10 +12,10 @@ const HowToSection = () => {
       "Selesai! Anda dapat langsung melakukan transaksi dengan Paper Usaha.",
     ],
     imgSrc: [
-      "/img-how-to-1.png",
-      "/img-how-to-2.png",
-      "/img-how-to-3.png",
-      "/img-how-to-4.png",
+      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-1.png&w=1200&q=100",
+      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-2.png&w=1200&q=100",
+      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-3.png&w=1200&q=100",
+      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-4.png&w=1200&q=100",
     ],
   };
   const [selected, setSelected] = useState(0);

@@ -17,7 +17,7 @@ const HeroSection = () => {
       <Image
         className="z-0"
         draggable={false}
-        src={"/Aurora.png"}
+        src={"https://paper-sepia.vercel.app/_next/image?url=%2FAurora.png&w=640&q=100"}
         alt=""
         fill
       />

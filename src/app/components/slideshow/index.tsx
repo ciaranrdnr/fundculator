@@ -18,8 +18,8 @@ const Slideshow = (props: ISlideshow) => {
     }
   }, [props.active]);
   return (
-    <div className="flex flex-col items-center w-1/2 h-full">
-      <div className="max-h-[50vh] overflow-hidden">
+    <div className="flex flex-col items-center w-1/2 h-full translate-y-20">
+      <div className="max-h-[556px] overflow-hidden">
         <div
           className="transition-transform"
           style={{ transform: `translateY(-${position}px)` }}
