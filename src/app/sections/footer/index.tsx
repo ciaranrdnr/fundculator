@@ -1,133 +1,84 @@
 import Image from "next/image";
-import PhoneIcon from "@/app/assets/icons/phone";
-import EmailIcon from "@/app/assets/icons/email";
-import HomeIcon from "@/app/assets/icons/home";
 import Button from "../../components/button";
 
 const Footer = () => {
   return (
-    <footer className="px-4 sm:px-[10%] pt-[10%] bg-gradient-to-br from-[#4195D5] from-0% via-[#27638a] via-50% to-[#133F5D] to-100%">
-      <div className="flex sm:flex-row flex-col sm:space-x-[88px] items-center">
-        <Image
-          src={"/img-solution.png"}
-          alt=""
-          draggable={false}
-          width={600}
-          height={0}
-          style={{ width: "20vw", height: "auto" }}
-        />
-        <div className="sm:w-1/2 space-y-8">
-          <p className="text-white font-bold text-lg sm:text-4xl sm:leading-[59px] sm:text-left text-center">
-            Solusi Pembayaran untuk Kelancaran Cashflow Bisnis via Paper id
+    <footer className="pt-20 bg-blue-100 text-white w-full">
+      <div className="flex flex-col items-center w-full justify-center gap-10 max-w-[1440px] mx-auto desktop-lg:px-0 px-6 sm:px-20">
+        <div className="w-full flex flex-col justify-center items-center">
+          <p className="text-grey font-bold text-lg sm:text-4xl sm:leading-[59px] sm:text-left text-center">
+            Subscribe NewsLetter
           </p>
+          <p>To Know more about Reksa Dana, please enter your emails below</p>
+        </div>
+
+        <div className="flex gap-1 h-10 sm:h-15 text-sm sm:text-lg max-w-[1440px] w-full justify-center">
+          <div className="flex-grow desktop-lg:max-w-[20vw] rounded-l-lg bg-white">
+            <input
+              className="h-full rounded-lg sm:pl-6 pl-4"
+              placeholder="Enter your E-mail"
+            />
+          </div>
           <Button
             variant="contained"
-            label={<p>Daftar Gratis Sekarang</p>}
-            className="py-4 px-12 w-full sm:w-fit"
+            label={<p>Subscribe</p>}
+            className="sm:px-12 w-full sm:w-fit rounded-l-none"
           />
         </div>
       </div>
 
-      <nav className="flex sm:flex-row flex-col border-t border-b mt-[10%] py-[21px] justify-between space-y-12 sm:space-y-0">
-        <div className="flex flex-col space-y-[15px] sm:w-1/2">
-          <Image src={"/paper-logo.svg"} width={157} height={56} alt="paper" />
-          <div className="flex sm:flex-row flex-col sm:space-x-8 text-white text-sm">
-            <div className="flex sm:flex-row flex-col space-y-6 sm:space-y-0 sm:space-x-7">
-              <div className="flex-col space-y-2.5 sm:w-1/2">
-                <p className="font-bold">Hubungi Kami</p>
-                <div className="flex space-x-2">
-                  <PhoneIcon size={24} />
-                  <div className="flex flex-col space-y-1">
-                    <p>+62 821 1767 9137</p>
-                    <p>+62 821 1767 9137</p>
-                  </div>
-                </div>
-                <div className="flex space-x-2">
-                  <EmailIcon size={24} />
-                  <p>support@paper.id</p>
-                </div>
-                <div className="flex space-x-2">
-                  <HomeIcon size={24} />
-                  <p>
-                    Jl. Sunter Garden Raya
-                    <br /> No.5D, RT.6/RW.12,
-                    <br /> Sunter Agung, Tj. Priok, <br />
-                    Kota Jkt Utara, DKI Jakarta <br />
-                    14350
+      <nav className="bg-white text-grey-100 sm:px-20 px-6 flex sm:flex-row flex-col border border-t-4 border-apricot-50 mt-20 py-[21px] justify-between space-y-12 sm:space-y-0">
+        <div className="flex sm:flex-row flex-col w-full desktop-lg:mx-auto desktop-lg:max-w-[1440px]">
+          <div className="flex flex-col space-y-[15px] sm:w-1/2">
+            <Image src={"/main-logo.svg"} width={157} height={56} alt="paper" />
+            <div className="flex sm:flex-row flex-col sm:space-x-8 text-grey text-sm">
+              <div className="flex sm:flex-row flex-col space-y-6 sm:space-y-0 sm:space-x-7 sm:max-w-[75%]">
+                <div className="flex-col space-y-2.5 ">
+                  <p className="font-bold text-sm">
+                    Mirae Asset Sekuritas | Member of Indonesia Stock Exchange
+                  </p>
+                  <p className="text-grey-25">
+                    District 8, Treasury Tower 50th floor SCBD lot 28, Jl. Jend.
+                    Sudirman Kav, 52-54 Jakarta 12190
+                  </p>
+                  <p className="text-grey-10 text-xs pt-4">
+                    © 1997 - 2022 Mirae Asset Financial Group. All Rights
+                    Reserved
                   </p>
                 </div>
               </div>
-
-              <div className="flex flex-col space-y-2.5">
-                <p className="font-bold">Jam Operasional</p>
-                <div className="flex space-x-2">
-                  <div className="flex flex-col space-y-2">
-                    <p>Senin - Jumat</p>
-                    <p>Sabtu & Libur Nasional</p>
-                  </div>
-                  <div className="flex flex-col space-y-2 flex-none">
-                    <p>: 07.00 - 22.00 WIB</p>
-                    <p>: 08.00 - 17.00 WIB</p>
-                  </div>
-                </div>
+            </div>
+          </div>
+          <div className="flex text-xs sm:flex-row flex-col space-y-6 sm:space-y-0  text-grey space-x-8">
+            <div>
+              <p className="font-bold text-sm">Our Product</p>
+              <div className="flex space-x-8 pt-[10px]">
+                <ul className="flex flex-col space-y-[10px]">
+                  <li>Capital Market</li>
+                  <li>NAVI by Mirae Asset</li>
+                  <li>Investment Banking</li>
+                  <li>ETF</li>
+                </ul>
               </div>
             </div>
-          </div>
-        </div>
-        <div className="flex text-sm sm:flex-row flex-col space-y-6 sm:space-y-0  text-white space-x-8">
-          <div>
-            <p className="font-bold">Fitur Lainnya</p>
-            <div className="flex space-x-8 pt-[10px]">
-              <ul className="flex flex-col space-y-[10px]">
-                <li>Order dan Penawaran</li>
-                <li>Akuntansi Gratis</li>
-                <li>Digital Payment</li>
-                <li>Manajemen Stok</li>
-                <li>Laporan Keungan</li>
-                <li>One Click Share</li>
-                <li>Template Invoice</li>
-              </ul>
-              <ul className="flex flex-col space-y-[10px]">
-                <li>Order dan Penawaran</li>
-                <li>Akuntansi Gratis</li>
-                <li>Digital Payment</li>
-                <li>Manajemen Stok</li>
-                <li>Laporan Keungan</li>
-                <li>One Click Share</li>
-                <li>Template Invoice</li>
-              </ul>
+            <ul className="hidden sm:flex flex-col space-y-[10px]">
+              <li className="font-bold text-sm">Legal</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Condition</li>
+              <li>Risk Warning</li>
+            </ul>
+            <ul className="hidden sm:flex flex-col space-y-[10px]">
+              <li className="font-bold text-sm">Company</li>
+              <li>About Us</li>
+              <li>Security</li>
+            </ul>
+            <div className="hidden sm:flex flex-col space-y-[10px]">
+              <div className="font-bold text-sm">Connect with Us</div>
+              <Image src={"/sosmed.png"} width={145} height={25} alt="" />
             </div>
           </div>
-          <ul className="hidden sm:flex flex-col space-y-[10px]">
-            <li className="font-bold">Jual Beli</li>
-            <li>Jasa</li>
-            <li>F&B</li>
-          </ul>
-          <ul className="hidden sm:flex flex-col space-y-[10px]">
-            <li className="font-bold">Perusahaan</li>
-            <li>Tentang Kami</li>
-            <li>Cara Kerja</li>
-            <li>Karir</li>
-            <li>Pricing</li>
-            <li>Blog</li>
-            <li>Help Center</li>
-            <li>FAQ</li>
-          </ul>
         </div>
       </nav>
-      <div></div>
-      <div className="flex text-center sm:text-left flex-col space-y-10 sm:space-y-0 sm:flex-row items-center
-       sm:justify-between pt-7 pb-32">
-        <p className="text-white/60 text-sm">
-          Copyright © 2023 Paper.id (PT Pakar Digital Global)
-        </p>
-        <Image src={"/sosmed.png"} width={145} height={25} alt="" />
-        <div className="text-sm text-white flex justify-center sm:justify-start space-x-4">
-          <p>Privacy Policy</p>
-          <p>Terms & Condition</p>
-          <p>Sitemap</p>
-        </div>
-      </div>
     </footer>
   );
 };

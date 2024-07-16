@@ -82,14 +82,14 @@ const EmergencyFundSection = () => {
   }, [selectedTab]);
 
   return (
-    <div className="border w-full h-fit rounded-[40px] overflow-clip select-none drop-shadow-md">
+    <div className="border w-full h-fit rounded-2xl sm:rounded-[40px] overflow-clip select-none drop-shadow-md">
       <EmergencyFundTabs
         tabs={tabContents}
         selectedTab={selectedTab}
         onClick={setSelectedTab}
       />
-      <div className="flex bg-white p-20 gap-20 pb-30">
-        <div className="flex-grow flex flex-col gap-20">
+      <div className="flex desktop-sm:flex-row flex-col bg-white p-4 desktop-sm:p-10 desktop-lg:p-20 gap-16 desktop-sm:gap-20 pb-30">
+        <div className="flex-grow flex flex-col gap-10 desktop-sm:gap-20">
           <CalculatorInput
             range={{ min: 0, max: 1000000000 }}
             variant="money"
@@ -127,9 +127,9 @@ const EmergencyFundSection = () => {
             }
           />
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 items-center desktop-sm:items-start">
           <Image src={selectedTab.image} alt="" width={354} height={239} />
-          <div className="border rounded-3xl flex flex-col p-4 gap-4">
+          <div className="border rounded-lg sm:rounded-3xl flex flex-col p-4 gap-4 w-full">
             <div>
               <p>Monthly Investment Needed</p>
               <p className="font-bold text-3xl">

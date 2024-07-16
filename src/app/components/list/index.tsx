@@ -20,7 +20,9 @@ const List = (props: IList) => {
               )}
             </div>
             <div className="flex flex-col space-y-2 sm:space-y-[14px] text-black">
-              <p className="text-base sm:text-[26px] font-bold">{content.title}</p>
+              <p className="text-base sm:text-[26px] font-bold">
+                {content.title}
+              </p>
               <p className="text-sm sm:text-xl">{content.desc}</p>
             </div>
           </div>

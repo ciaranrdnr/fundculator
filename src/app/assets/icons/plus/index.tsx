@@ -13,7 +13,7 @@ const MinusIcon = (props: IMinusIcon) => {
       <path
         d="M6.66669 16H25.3334"
         stroke="#F58220"
-        stroke-width="2"
+        strokeWidth="2"
         strokeLinecap="square"
         strokeLinejoin="round"
       />

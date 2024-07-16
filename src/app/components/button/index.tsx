@@ -38,7 +38,7 @@ const Button = React.forwardRef(
     ref: React.LegacyRef<HTMLButtonElement>
   ) => {
     const defaultClass =
-      "align-middle justify-center items-center cursor-pointer text-base rounded-lg";
+      "align-middle justify-center items-center cursor-pointer text-sm desktop-sm:text-base rounded-lg";
     const disabledClass =
       "bg-grey-10 text-white border-2 border-grey-10 !cursor-default";
     const variantClass = {

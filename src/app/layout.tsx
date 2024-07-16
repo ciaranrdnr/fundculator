@@ -15,14 +15,14 @@ export default function RootLayout({
     <html lang="en">
       <link
         rel="apple-touch-icon"
-        href="https://www.paper.id/apple-touch-icon.png"
+        href="https://promo.miraeasset.co.id/reksadana/logo-mirae.png"
         type="image/<generated>"
         sizes="<generated>"
       />
       <link
         rel="icon"
         type="image/png"
-        href="https://www.paper.id/apple-touch-icon.png"
+        href="https://promo.miraeasset.co.id/reksadana/logo-mirae.png"
         sizes="32x32"
       ></link>
       <body>{children}</body>

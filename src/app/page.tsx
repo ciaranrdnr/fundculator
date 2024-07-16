@@ -1,8 +1,7 @@
 import Topbar from "./components/topbar";
-import BenefitSection from "./sections/benefit";
+import BenefitSection from "./sections/faq";
 import HowToSection from "./sections/how-to";
 import Footer from "./sections/footer";
-import CheckoutSection from "./sections/checkout";
 import TopSection from "./sections/top-section";
 import { Montserrat, Lato } from "next/font/google";
 import InvestmentFundCalculator from "./sections/investment-fund-calculator";
@@ -28,9 +27,8 @@ export default function Home() {
       <TopSection />
       <HowToSection />
       <InvestmentFundCalculator />
-      {/* <CheckoutSection />
-      <BenefitSection /> */}
-      {/* <Footer /> */}
+      <BenefitSection />
+      <Footer />
     </main>
   );
 }

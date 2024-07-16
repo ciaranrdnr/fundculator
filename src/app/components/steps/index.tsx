@@ -18,7 +18,7 @@ interface ISteps {
   style?: React.CSSProperties;
 }
 const Steps = (props: ISteps) => {
-  const defaultClass = `flex flex-col rounded-lg items-start cursor-pointer ease-in transition-colors border sm:px-6 sm:py-4`;
+  const defaultClass = `bg-white flex flex-col rounded-lg items-start cursor-pointer ease-in transition-colors border p-4 sm:px-6 sm:py-4`;
   const contentRefs = useRef<any>([]);
 
   switch (props.variant) {
@@ -40,7 +40,7 @@ const Steps = (props: ISteps) => {
                     props.onChange && props.onChange(idx);
                   }}
                   className={`flex  w-fit items-center`}
-                  key={idx + content.image}
+                  key={idx + content.title}
                 >
                   <div className="flex space-x-1 items-center">
                     {props.selected && props.selected > idx ? (
@@ -89,12 +89,12 @@ const Steps = (props: ISteps) => {
                     ? "border-apricot-50 drop-shadow-[-16px_12px_16px_rgb(0,0,0,0.1)] bg-white"
                     : "border-grey-10"
                 }`}
-                key={idx + content.image}
+                key={idx + content.title}
               >
                 <div className="text-xl sm:text-2xl font-bold flex justify-between w-full">
                   <h3>{content.title}</h3>
-                  <span
-                    className={`transform transition-transform duration-300 ${
+                  <div
+                    className={`transform transition-transform duration-300 h-fit ${
                       isActive ? "rotate-180" : ""
                     }`}
                   >
@@ -103,18 +103,18 @@ const Steps = (props: ISteps) => {
                     ) : (
                       <PlusIcon size={32} />
                     )}
-                  </span>
+                  </div>
                 </div>
                 <div
                   ref={(el) => (contentRefs.current[idx] = el)}
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isActive ? "pt-4" : ""
+                    isActive ? "pt-2 sm:pt-4" : ""
                   }`}
                   style={{ maxHeight: isActive ? "100vh" : "0px" }}
                 >
-                  <p className="text-sm sm:text-base text text-grey-50">
+                  <div className="text-sm sm:text-base text text-grey-50">
                     {content.desc}
-                  </p>
+                  </div>
                 </div>
               </div>
             );
@@ -123,11 +123,4 @@ const Steps = (props: ISteps) => {
       );
   }
 };
-Steps.displayName = "Steps";
-
-Steps.defaultProps = {
-  autoChange: true,
-  variant: "vertical",
-};
-
 export default Steps;

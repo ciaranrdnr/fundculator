@@ -32,7 +32,7 @@ const HowToSection = () => {
   const [selected, setSelected] = useState(0);
   return (
     <section className="how-to bg-white">
-      <div className="text-center text-sm sm:text-lg items-center translate-y-10 sm:-translate-y-10 max-xl:-translate-y-20 flex flex-row gap-2 px-4 sm:px-0 sm:gap-4 text-white bg-blue-100 justify-center w-full max-w-[80vw] rounded-2xl mx-auto py-5 sm:py-10">
+      <div className=" text-center text-sm sm:text-lg items-center -translate-y-10 desktop-sm:-translate-y-20 flex flex-row gap-2 px-4 sm:px-0 sm:gap-4 text-white bg-blue-100 justify-center w-full max-w-[80vw] rounded-2xl mx-auto py-2 sm:py-10">
         <div className="flex flex-row gap-4 items-center">
           <div className="desktop-sm:block hidden">
             <MoneyIcon size={32} />
@@ -54,7 +54,7 @@ const HowToSection = () => {
           <p>Beragam Pilihan Produk</p>
         </div>
       </div>
-      <div className="flex flex-row-reverse sm:gap-12 h-full items-start max-w-[1440px] mx-auto my-20">
+      <div className="flex flex-col sm:flex-row-reverse sm:gap-12 h-full items-start max-w-[1440px] mx-auto sm:my-20 px-6 sm:px-12 desktop-lg:px-0">
         <Steps
           contents={contents}
           selected={selected}
@@ -63,7 +63,9 @@ const HowToSection = () => {
           }}
           className="w-full"
         />
-        <Slideshow contents={contents} active={selected} />
+        <div className="desktop-sm:block hidden">
+          <Slideshow contents={contents} active={selected} />
+        </div>
       </div>
     </section>
   );

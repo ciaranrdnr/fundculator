@@ -13,7 +13,7 @@ const PlusIcon = (props: IPlusIcon) => {
       <path
         d="M16 6.66663V25.3333M6.66669 16H25.3334"
         stroke="#313233"
-        stroke-width="2"
+        strokeWidth="2"
         strokeLinecap="square"
         strokeLinejoin="round"
       />

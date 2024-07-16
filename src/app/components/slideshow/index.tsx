@@ -12,22 +12,22 @@ const Slideshow = (props: ISlideshow) => {
 
   useEffect(() => {
     if (props.active !== URLSearchParams.length - 1) {
-      setPosition(props.active * 556);
+      setPosition(props.active * 379);
     } else {
       setPosition(0);
     }
   }, [props.active]);
 
   return (
-    <div className="flex flex-col items-center sm:w-1/2 px-4 h-full pt-5">
-      <div className="max-h-[296px] sm:max-h-[556px] overflow-clip rounded-2xl">
+    <div className="flex flex-col items-center h-fit pt-5">
+      <div className="max-h-[296px] sm:max-h-[379px] overflow-clip rounded-2xl">
         <div
           className="transition-transform ease-out delay-150"
           style={{ transform: `translateY(-${position}px)` }}
         >
           {props.contents.map((content, idx: number) => {
             return (
-              <div key={content.image + idx} className="h-[556px]">
+              <div key={content.image + idx} className="h-[379px]">
                 <Image
                   draggable={false}
                   src={content.image}

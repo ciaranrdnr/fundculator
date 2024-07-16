@@ -29,26 +29,28 @@ const Topbar = (props: ITopbar) => {
   }, []);
 
   const defaultClass =
-    "topbar fixed w-full top-0 uppercase z-20 transition-all py-4 sm:px-12 desktop-lg:mx-0";
+    "topbar fixed w-full top-0 uppercase z-20 transition-all py-4 px-4 sm:px-12 desktop-lg:mx-0";
   return (
     <nav
       className={`${defaultClass} ${
         scroll ? "bg-white/80 backdrop-blur-sm" : "bg-white"
       } ${props.className ?? ""} `}
     >
-      <div className=" flex justify-between items-center max-w-[1440px] mx-auto">
+      <div className="flex justify-between items-center mx-auto desktop-lg:max-w-[1440px] max-w-[100vw]">
         <Link href={""}>
-          <Image alt="Paper" width={114} height={40} src={"/logo-navi.png"} />
+          <div className="w-20 h-7 desktop-sm:w-[114px] desktop-sm:h-10 relative">
+            <Image alt="Paper" fill src={"/logo-navi.png"} />
+          </div>
         </Link>
         {props.children && <div>{props.children}</div>}
-        <div className="flex text-sm space-x-3">
+        <div className="flex sm:text-sm space-x-3">
           <Button
-            className="h-10 px-6 capitalize"
+            className="h-8 sm:h-10 px-2 desktop-sm:px-6 capitalize"
             label="contact us"
             variant="outlined"
           />
           <Button
-            className="h-10 px-6 capitalize"
+            className="h-8 sm:h-10 px-2 desktop-sm:px-6 capitalize"
             label="register"
             variant="contained"
           />
@@ -57,9 +59,5 @@ const Topbar = (props: ITopbar) => {
     </nav>
   );
 };
-
-Topbar.displayName = "Topbar";
-
-Topbar.defaultProps = {};
 
 export default Topbar;
