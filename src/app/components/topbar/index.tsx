@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import Image from "next/image";
 import Button from "../button";
 import Link from "next/link";
@@ -22,30 +22,34 @@ const Topbar = (props: ITopbar) => {
         setScroll(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const defaultClass = 'topbar fixed top-0 w-full px-3 sm:px-[10%] mx-auto  uppercase z-20 flex justify-between items-center '
+
+  const defaultClass =
+    "topbar fixed w-full top-0 uppercase z-20 transition-all py-4 sm:px-12 desktop-lg:mx-0";
   return (
-    <nav className={`${defaultClass} transition-all ${scroll?'bg-white pt-4 pb-4':'bg-transparent pt-[30px] pb-2'} ${props.className ?? ''} `}>
-      <Link href={''}><Image alt="Paper" width={114} height={40} src={scroll?'/paper-logo-black.svg':'/paper-logo.svg'} /></Link> 
-      <div className="sm:flex text-lg items-center w-3/4 justify-between hidden">
-        <ul className="flex space-x-8">
-          {props.children?.map((child, idx:number)=>{
-            return( <li key={'topbar'+idx} className={`${scroll?' text-black hover:text-black/80':' text-gray-200 hover:text-white'}`}> {child} </li>)
-          })}
-        </ul>
+    <nav
+      className={`${defaultClass} ${
+        scroll ? "bg-white/80 backdrop-blur-sm" : "bg-white"
+      } ${props.className ?? ""} `}
+    >
+      <div className=" flex justify-between items-center max-w-[1440px] mx-auto">
+        <Link href={""}>
+          <Image alt="Paper" width={114} height={40} src={"/logo-navi.png"} />
+        </Link>
+        {props.children && <div>{props.children}</div>}
         <div className="flex text-sm space-x-3">
           <Button
-            className="px-5 py-3"
-            label="LOGIN"
+            className="h-10 px-6 capitalize"
+            label="contact us"
             variant="outlined"
           />
           <Button
-            className="px-5 py-3"
-            label="DAFTAR"
+            className="h-10 px-6 capitalize"
+            label="register"
             variant="contained"
           />
         </div>
@@ -54,9 +58,8 @@ const Topbar = (props: ITopbar) => {
   );
 };
 
-Topbar.displayName = 'Topbar';
+Topbar.displayName = "Topbar";
 
-Topbar.defaultProps = {
-};
+Topbar.defaultProps = {};
 
 export default Topbar;

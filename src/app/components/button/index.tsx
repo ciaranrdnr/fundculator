@@ -7,7 +7,6 @@ interface IButton {
   label?: React.ReactNode;
   type?: "button" | "submit" | "reset";
   isDisabled?: boolean;
-  isCapitalize?: boolean;
   isFullWidth?: boolean;
   variant: TButtonVariants;
 
@@ -27,7 +26,6 @@ const Button = React.forwardRef(
       label,
       type,
       isDisabled,
-      isCapitalize,
       isFullWidth,
       variant,
       onClick,
@@ -40,14 +38,14 @@ const Button = React.forwardRef(
     ref: React.LegacyRef<HTMLButtonElement>
   ) => {
     const defaultClass =
-      "align-middle justify-center items-center cursor-pointer text-lg";
+      "align-middle justify-center items-center cursor-pointer text-base rounded-lg";
     const disabledClass =
-      "bg-[#E0E4E7] text-[#9AA6B0] border-2 border-green-[#E0E4E7] cursor-default";
+      "bg-grey-10 text-white border-2 border-grey-10 !cursor-default";
     const variantClass = {
       contained:
-        "text-white bg-green-50 border-2 border-green-50 transition ease-in-out delay-150 hover:text-green-50 hover:bg-transparent",
+        "text-white bg-apricot-50 border-2 border-apricot-50 transition ease-in-out delay-150 hover:bg-apricot-100/80",
       outlined:
-        "text-green-50 border-2 border-green-50 transition ease-in-out delay-150 hover:text-white hover:bg-green-50",
+        "text-apricot-50 border-2 border-apricot-50 transition ease-in-out delay-150 hover:bg-apricot-50/10",
       "outlined-blue":
         "text-blue border-2 border-blue transition ease-in-out delay-150 hover:bg-blue/10",
     };
@@ -56,9 +54,7 @@ const Button = React.forwardRef(
         disabled={isDisabled}
         ref={ref}
         style={style}
-        className={`rounded-full ${defaultClass} ${
-          isCapitalize ? "capitalize" : ""
-        }  ${isFullWidth ? "w-full" : ""} ${
+        className={`${defaultClass} ${isFullWidth ? "w-full" : ""} ${
           isDisabled ? disabledClass : variantClass[variant]
         } ${className}`}
         onClick={onClick}
@@ -75,9 +71,5 @@ const Button = React.forwardRef(
 );
 
 Button.displayName = "Button";
-
-Button.defaultProps = {
-  isCapitalize: false,
-};
 
 export default Button;

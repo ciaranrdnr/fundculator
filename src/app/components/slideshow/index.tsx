@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface ISlideshow {
-  urls: string[];
+  contents: any[];
   active: number;
 }
 
@@ -17,21 +17,22 @@ const Slideshow = (props: ISlideshow) => {
       setPosition(0);
     }
   }, [props.active]);
+
   return (
-    <div className="flex flex-col items-center sm:w-1/2 px-4 h-full translate-y-20">
-      <div className="max-h-[296px] sm:max-h-[556px] overflow-hidden">
+    <div className="flex flex-col items-center sm:w-1/2 px-4 h-full pt-5">
+      <div className="max-h-[296px] sm:max-h-[556px] overflow-clip rounded-2xl">
         <div
-          className="transition-transform"
+          className="transition-transform ease-out delay-150"
           style={{ transform: `translateY(-${position}px)` }}
         >
-          {props.urls.map((url, idx: number) => {
+          {props.contents.map((content, idx: number) => {
             return (
-              <div key={url + idx} className="h-[556px]">
+              <div key={content.image + idx} className="h-[556px]">
                 <Image
                   draggable={false}
-                  src={url}
-                  width={600}
-                  height={556}
+                  src={content.image}
+                  width={380}
+                  height={495}
                   objectFit="contain"
                   alt=""
                 />

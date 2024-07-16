@@ -1,26 +1,36 @@
-import Topbar from './components/topbar'
-import Link from 'next/link'
-import BenefitSection from './sections/benefit'
-import HeroSection from './sections/hero'
-import HowToSection from './sections/how-to'
-import Footer from './sections/footer'
-import CheckoutSection from './sections/checkout'
+import Topbar from "./components/topbar";
+import BenefitSection from "./sections/benefit";
+import HowToSection from "./sections/how-to";
+import Footer from "./sections/footer";
+import CheckoutSection from "./sections/checkout";
+import TopSection from "./sections/top-section";
+import { Montserrat, Lato } from "next/font/google";
+import InvestmentFundCalculator from "./sections/investment-fund-calculator";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: "900",
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  variable: "--font-lato",
+  weight: ["400", "700"],
+});
 
 export default function Home() {
   return (
-    <main className='relative'>
-      <Topbar>
-        <Link href={''} >produk</Link>
-        <Link href={''} >solusi bisnis</Link>
-        <Link href={''} >cara kerja</Link>
-        <Link href={''} >harga</Link>
-        <Link href={''} >perusahaan</Link>
-      </Topbar>
-      <HeroSection/>
-      <HowToSection/>
-      <CheckoutSection/>
-      <BenefitSection/>
-      <Footer/>
+    <main
+      className={`relative mx-auto ${montserrat.variable} ${lato.variable}`}
+    >
+      <Topbar />
+      <TopSection />
+      <HowToSection />
+      <InvestmentFundCalculator />
+      {/* <CheckoutSection />
+      <BenefitSection /> */}
+      {/* <Footer /> */}
     </main>
-  )
+  );
 }

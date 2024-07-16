@@ -2,38 +2,68 @@
 import { useState } from "react";
 import Steps from "../../components/steps";
 import Slideshow from "../../components/slideshow";
+import MoneyIcon from "@/app/assets/icons/money";
+import ChartIcon from "@/app/assets/icons/chart";
+import HandWithMoneyIcon from "@/app/assets/icons/hand-with-money";
 
 const HowToSection = () => {
-  const contents = {
-    desc: [
-      "Isi data diri dan unggah dokumen legal Anda (SIUP, Akta Perusahaan, dll) pada halaman Pendaftaran.",
-      "Dapatkan persetujuan penawaran dari berbagai macam lembaga keuangan penyedia pembayaran.",
-      "Tanda tangan dokumen secara digital.",
-      "Selesai! Anda dapat langsung melakukan transaksi dengan Paper Usaha.",
-    ],
-    imgSrc: [
-      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-1.png&w=1200&q=100",
-      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-2.png&w=1200&q=100",
-      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-3.png&w=1200&q=100",
-      "https://paper-sepia.vercel.app/_next/image?url=%2Fimg-how-to-4.png&w=1200&q=100",
-    ],
-  };
+  const contents = [
+    {
+      title: "Kenal lebih dekat dengan reksa dana",
+      desc: "Reksa dana adalah instrumen investasi yang menghimpun dana dari banyak investor, untuk kemudian dikelola oleh manajer investasi profesional. Para manajer investasi yang akan mengalokasikan dana ke berbagai instrumen keuangan, seperti saham, obligasi, atau instrumen pasar uang, sehingga kamu tetap dapat menikmati keuntungan tanpa harus ikut repot memilih instrumen mana yang paling cuan. Baca lebih mendalam tentang reksa dana di Funducation!",
+      image: "/get-to-know.png",
+    },
+    {
+      title: "Begini cara reksa dana mewujudkan mimpi finansialmu",
+      desc: `Kami percaya setiap orang memiliki cara dan gaya yang berbeda dalam meraih mimpi. Dalam hal ini, reksa dana dapat membantu wujudkan tujuan finansialmu meski kondisi ekonomi sedang serba tak pasti. Fleksibilitas reksa dana membuatmu bebas memilih instrumen mana saja, tanpa komitmen waktu tertentu. Asiknya lagi, dana dapat ditarik sewaktu-waktu, tanpa ada waktu tunggu tertentu. Pastikan kamu memilih reksa dana sesuai dengan tujuan finansial dan profil risiko, untuk meminimalisir risiko investasi, dan tentu saja mendapatkan imbal balik yang paling menguntungkan.`,
+      image: "/dream.png",
+    },
+    {
+      title: "Begini cara reksa dana melindungi asetmu",
+      desc: `Reksa Dana adalah salah satu instrumen investasi yang dikelola oleh manajer investasi profesional dalam bentuk pengumpulan dana dari banyak investor. Dana tersebut kemudian diinvestasikan Manajer Investasi profesional ke berbagai kelas aset, termasuk saham, surat utang, instrumen pasar uang, dan sebagainya untuk dapat menghasilkan capital gain atau pendapatan untuk investor yang menyimpan dananya.`,
+      image: "/security.png",
+    },
+    {
+      title: "Lebih praktis & disiplin investasi dengan auto-invest",
+      desc: `Platform investasi reksa dana online Mirae Asset memiliki fitur auto-invest yang memudahkan kamu untuk memulai investasi reksa dana secara secara rutin & disiplin.Kalau kamu mengaktifkan fitur auto-invest, jumlah dana di RDN akan didebet & diinvestasikan secara otomatis ke produk yang telah dipilih, dengan periode dan nominal yang sudah kamu atur sebelumnya. Praktis, kan? Pelajari auto-invest lebih lanjut di Belajar Bareng Mirae Asset !`,
+      image: "/auto-invest.png",
+    },
+  ];
   const [selected, setSelected] = useState(0);
   return (
-    <section className="how-to pt-[54px] pb-[60px]">
-      <h2 className="text-navy text-3xl sm:text-5xl text-center font-bold">
-        Proses Pendaftaran SmartCart Pay Later
-      </h2>
-      <div className="flex flex-col sm:flex-row sm:space-x-24 h-full items-center">
+    <section className="how-to bg-white">
+      <div className="text-center text-sm sm:text-lg items-center translate-y-10 sm:-translate-y-10 max-xl:-translate-y-20 flex flex-row gap-2 px-4 sm:px-0 sm:gap-4 text-white bg-blue-100 justify-center w-full max-w-[80vw] rounded-2xl mx-auto py-5 sm:py-10">
+        <div className="flex flex-row gap-4 items-center">
+          <div className="desktop-sm:block hidden">
+            <MoneyIcon size={32} />
+          </div>
+          <p>Bebas Biaya Transaksi & Pajak</p>
+        </div>
+        <div className="w-[1px] h-10 border-l border-white/20" />
+        <div className="flex flex-row gap-4 items-center">
+          <div className="desktop-sm:block hidden">
+            <ChartIcon size={32} />
+          </div>
+          <p>Imbal Hasil Menarik</p>
+        </div>
+        <div className="w-[1px] h-10 border-l border-white/20" />
+        <div className="flex flex-row gap-4 items-center">
+          <div className="desktop-sm:block hidden">
+            <HandWithMoneyIcon size={32} />
+          </div>
+          <p>Beragam Pilihan Produk</p>
+        </div>
+      </div>
+      <div className="flex flex-row-reverse sm:gap-12 h-full items-start max-w-[1440px] mx-auto my-20">
         <Steps
-          contents={contents.desc}
+          contents={contents}
           selected={selected}
-          onChange={(e:any) => {
+          onChange={(e: any) => {
             setSelected(e);
           }}
-          className="w-full px-4 sm:w-1/2 sm:pl-[10%] pt-[10%]"
+          className="w-full"
         />
-        <Slideshow urls={contents.imgSrc} active={selected} />
+        <Slideshow contents={contents} active={selected} />
       </div>
     </section>
   );

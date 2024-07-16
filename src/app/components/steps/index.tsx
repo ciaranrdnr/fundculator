@@ -1,10 +1,12 @@
 "use client";
 import CheckedIcon from "@/app/assets/icons/checked";
-import { MouseEventHandler, useEffect } from "react";
+import PlusIcon from "@/app/assets/icons/minus";
+import MinusIcon from "@/app/assets/icons/plus";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 
 interface ISteps {
-  contents: string[];
-  selected: number;
+  contents: any[];
+  selected?: number;
   autoChange?: boolean;
   variant?: "vertical" | "horizontal";
 
@@ -16,22 +18,8 @@ interface ISteps {
   style?: React.CSSProperties;
 }
 const Steps = (props: ISteps) => {
-  const defaultClass = `flex space-x-5 p-[22px] rounded-[10px] items-center cursor-pointer ease-in transition-colors`;
-
-  const autoChange = () => {
-    const lastIdx = props.contents.length - 1;
-    setTimeout(() => {
-      if (props.selected == lastIdx) {
-        props.onChange && props.onChange(0);
-      } else {
-        props.onChange && props.onChange(props.selected + 1);
-      }
-    }, 3000);
-  };
-
-  useEffect(() => {
-    autoChange();
-  }, [props.selected]);
+  const defaultClass = `flex flex-col rounded-lg items-start cursor-pointer ease-in transition-colors border sm:px-6 sm:py-4`;
+  const contentRefs = useRef<any>([]);
 
   switch (props.variant) {
     case "horizontal":
@@ -41,8 +29,10 @@ const Steps = (props: ISteps) => {
             props.className ?? ""
           }`}
         >
-          {props.contents.map((data, idx: number) => {
+          {props.contents.map((content, idx: number) => {
             let num = idx + 1;
+            const isActive = props.selected == idx;
+
             return (
               <>
                 <div
@@ -50,15 +40,15 @@ const Steps = (props: ISteps) => {
                     props.onChange && props.onChange(idx);
                   }}
                   className={`flex  w-fit items-center`}
-                  key={idx + data}
+                  key={idx + content.image}
                 >
                   <div className="flex space-x-1 items-center">
-                    {props.selected > idx ? (
+                    {props.selected && props.selected > idx ? (
                       <CheckedIcon size={32} />
                     ) : (
                       <div
                         className={`border flex-none ${
-                          props.selected == idx
+                          isActive
                             ? "bg-green-50 border-green-50 text-white"
                             : "bg-transparent border-black text-black"
                         } w-6 h-6 rounded-full text-center text-sm `}
@@ -68,12 +58,10 @@ const Steps = (props: ISteps) => {
                     )}
                     <p
                       className={` ${
-                        props.selected == idx
-                          ? "text-green-50"
-                          : "text-black/50"
+                        isActive ? "text-green-50" : "text-black/50"
                       } font-bold text-sm flex-none max-w-[120px]`}
                     >
-                      {data}
+                      {content.desc}
                     </p>
                   </div>
                 </div>
@@ -88,25 +76,46 @@ const Steps = (props: ISteps) => {
 
     default:
       return (
-        <div
-          className={`flex flex-col space-y-[18px] ${props.className ?? ""}`}
-        >
-          {props.contents.map((data, idx: number) => {
-            let num = idx + 1;
+        <div className={`flex flex-col gap-4 ${props.className ?? ""} `}>
+          {props.contents.map((content, idx: number) => {
+            const isActive = props.selected == idx;
             return (
               <div
                 onClick={() => {
-                  props.onChange && props.onChange(idx);
+                  props.onChange && props.onChange(isActive ? undefined : idx);
                 }}
                 className={`${defaultClass} ${
-                  props.selected == idx
-                    ? "bg-blue text-white"
-                    : "bg-white text-navy hover:bg-blue/10"
+                  isActive
+                    ? "border-apricot-50 drop-shadow-[-16px_12px_16px_rgb(0,0,0,0.1)] bg-white"
+                    : "border-grey-10"
                 }`}
-                key={idx + data}
+                key={idx + content.image}
               >
-                <span className="text-xl sm:text-5xl">{num}</span>
-                <p className="text-sm sm:text-xl">{data}</p>
+                <div className="text-xl sm:text-2xl font-bold flex justify-between w-full">
+                  <h3>{content.title}</h3>
+                  <span
+                    className={`transform transition-transform duration-300 ${
+                      isActive ? "rotate-180" : ""
+                    }`}
+                  >
+                    {isActive ? (
+                      <MinusIcon size={32} />
+                    ) : (
+                      <PlusIcon size={32} />
+                    )}
+                  </span>
+                </div>
+                <div
+                  ref={(el) => (contentRefs.current[idx] = el)}
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isActive ? "pt-4" : ""
+                  }`}
+                  style={{ maxHeight: isActive ? "100vh" : "0px" }}
+                >
+                  <p className="text-sm sm:text-base text text-grey-50">
+                    {content.desc}
+                  </p>
+                </div>
               </div>
             );
           })}

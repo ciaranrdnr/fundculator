@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: 'storage.googleapis.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'promo.miraeasset.co.id',
+        pathname: '/**',
+      },
     ],
   },
 }
